@@ -25,16 +25,16 @@ body {
       width: 80%;
       height: 60%;
       margin: 1% auto;
-      background-color: #ccc;
+      background-color: #fff;
       display: grid;
       grid-template-columns: repeat(15, 6.67%);
       grid-template-rows: repeat(5, 0.9fr);
       grid-template-areas:
-        'til one two three four five six seven eight nine zero minus equal back back'
-        'tab tab q w e r t y u i o p lbrace rbrace rslash'
-        'caps caps a s d f g h j k l semicolon quotes enter enter'
-        'lshift lshift lshift z x c v b n m comma dot lslash rshift rshift'
-        'lctrl win lalt space space space space space space space space space space ralt rctrl';
+      'Backquote Digit1 Digit2 Digit3 Digit4 Digit5 Digit6 Digit7 Digit8 Digit9 Digit0 Minus Equal Backspace Backspace'
+      'Tab Tab KeyQ KeyW KeyE KeyR KeyT KeyY KeyU KeyI KeyO KeyP BracketLeft BracketRight Backslash'
+      'CapsLock CapsLock KeyA KeyS KeyD KeyF KeyG KeyH KeyJ KeyK KeyL Semicolon Quote Enter Enter'
+      'ShiftLeft ShiftLeft ShiftLeft KeyZ KeyX KeyC KeyV KeyB KeyN KeyM Comma Period Slash ShiftRight ShiftRight'
+      'ControlLeft MetaLeft AltLeft Space Space Space Space Space Space Space Space Space Space AltRight ControlRight';
 
       .wrapper__container__button {
         display: flex;
