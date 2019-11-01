@@ -1,0 +1,56 @@
+// @import "./_fonts.scss";
+
+$main-font: 'Orbitron', sans-serif;
+
+body {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+
+  .wrapper {
+    width: 100%;
+    height: 90vh;
+    display: grid;
+    grid-template-rows: 10% 30% 60%;
+
+    .wrapper__input-text {
+      margin: 1% 0%;
+      resize: none;
+    }
+
+    .wrapper__container {
+      margin: 1% 1%;
+      background-color: #ccc;
+      display: grid;
+      grid-template-columns: repeat(15, 6.67%);
+      grid-template-rows: repeat(5, 0.9fr);
+      grid-template-areas:
+        'til one two three four five six seven eight nine zero minus equal back back'
+        'tab tab q w e r t y u i o p lbrace rbrace rslash'
+        'caps caps a s d f g h j k l semicolon quotes enter enter'
+        'lshift lshift lshift z x c v b n m comma dot lslash rshift rshift'
+        'lctrl win lalt space space space space space space space space space space ralt rctrl';
+
+      .wrapper__container__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #3A424E;
+        margin: 4px 4px;
+        border-radius: 2%;
+        color: #fff;
+
+        &:active {
+          transform: scale(0.9);
+        }
+
+        /* &:hover {
+          transform: scale(0.9);
+        } */
+      }
+    }
+  }
+}
