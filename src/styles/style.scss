@@ -22,7 +22,9 @@ body {
     }
 
     .wrapper__container {
-      margin: 1% 1%;
+      width: 80%;
+      height: 60%;
+      margin: 1% auto;
       background-color: #ccc;
       display: grid;
       grid-template-columns: repeat(15, 6.67%);
