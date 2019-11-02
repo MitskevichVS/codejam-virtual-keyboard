@@ -1,6 +1,6 @@
 import renderKeys from './renderKeys';
 
-const renderPage = (body, keysData) => {
+const renderPage = (body, keysData, language) => {
   const container = document.createElement('div');
   container.classList.add('wrapper');
   body.appendChild(container);
@@ -18,17 +18,7 @@ const renderPage = (body, keysData) => {
   keyboardContainer.className = 'wrapper__container';
   container.appendChild(keyboardContainer);
 
-  renderKeys(keysData);
-
-  const buttonsArray = document.querySelectorAll('.wrapper__container__button');
-
-  buttonsArray.forEach((item, index) => {
-    const button = item;
-    const keysDataIndex = keysData[index];
-    const [gridArea] = keysDataIndex;
-    button.style.gridArea = gridArea;
-    button.classList.add(gridArea);
-  });
+  renderKeys(keysData, language);
 };
 
 export default renderPage;
