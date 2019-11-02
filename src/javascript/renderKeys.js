@@ -9,6 +9,9 @@ const renderKeys = (keysArray) => {
   keys.forEach((item) => {
     const key = document.createElement('div');
     key.classList.add('wrapper__container__button', `${item}`);
+    if (item.length > 1 || item === '\xa0') {
+      key.classList.add('wrapper__container__button-nonchar');
+    }
     key.insertAdjacentHTML('afterbegin', `${item}`);
     keyboardContainer.appendChild(key);
   });

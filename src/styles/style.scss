@@ -44,11 +44,12 @@ body {
         margin: 4px 4px;
         border-radius: 2%;
         color: #fff;
-        transition: all 0.2s ease-in-out;
+        transition: all 0.1s ease-in-out;
+        user-select: none;
 
         &:active {
           transform: scale(0.9);
-          background-color: #636d7d;
+          background-color: #8f5ae6;
         }
 
         /* &:hover {
@@ -56,9 +57,13 @@ body {
         } */
       }
 
+      .wrapper__container__button-nonchar {
+        background-color: #232830;
+      }
+
       .wrapper__container__button-pressed {
         transform: scale(0.9);
-        background-color: #636d7d;
+        background-color: #8f5ae6;
       }
     }
   }
