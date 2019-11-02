@@ -17,4 +17,5 @@ window.onload = () => {
   renderPage(body, engKeys, buttonsId);
 
   document.addEventListener('keydown', animatePressButton);
+  document.addEventListener('keyup', animatePressButton);
 };

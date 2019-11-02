@@ -27,6 +27,7 @@ const renderPage = (body, keys, gridAreaCodes) => {
   buttonsArray.forEach((item, index) => {
     const button = item;
     button.style.gridArea = gridAreaCodes[index];
+    button.classList.add(gridAreaCodes[index]);
   });
 };
 

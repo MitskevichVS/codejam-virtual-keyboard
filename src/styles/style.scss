@@ -44,14 +44,21 @@ body {
         margin: 4px 4px;
         border-radius: 2%;
         color: #fff;
+        transition: all 0.2s ease-in-out;
 
         &:active {
           transform: scale(0.9);
+          background-color: #636d7d;
         }
 
         /* &:hover {
           transform: scale(0.9);
         } */
+      }
+
+      .wrapper__container__button-pressed {
+        transform: scale(0.9);
+        background-color: #636d7d;
       }
     }
   }
