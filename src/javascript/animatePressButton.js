@@ -4,11 +4,10 @@ const animatePressButton = (event) => {
 
   if (element === null) return;
 
-  element.classList.toggle('wrapper__container__button-pressed');
-
   if (event.type === 'keydown') {
+    element.classList.add('wrapper__container__button-pressed');
     element.click();
-  }
+  } else { element.classList.remove('wrapper__container__button-pressed'); }
 };
 
 export default animatePressButton;

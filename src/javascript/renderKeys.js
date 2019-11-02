@@ -8,11 +8,14 @@ const renderKeys = (keysArray) => {
 
   keys.forEach((item) => {
     const key = document.createElement('div');
+    console.log(item);
     key.classList.add('wrapper__container__button', `${item}`);
-    if (item.length > 1 || item === '\xa0') {
+    if (item.length === 5) {
       key.classList.add('wrapper__container__button-nonchar');
+      key.insertAdjacentHTML('afterbegin', `${item[4]}`);
+    } else {
+      key.insertAdjacentHTML('afterbegin', `${item[5]}`);
     }
-    key.insertAdjacentHTML('afterbegin', `${item}`);
     keyboardContainer.appendChild(key);
   });
 };
