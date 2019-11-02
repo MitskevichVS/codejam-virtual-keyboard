@@ -1,4 +1,4 @@
-const mouseClick = (event) => {
+const mouseClick = (setLanguage, setRegister, event) => {
   const textarea = document.querySelector('.wrapper__input-text');
 
   if (event.target.classList[0] !== 'wrapper__container__button') return;

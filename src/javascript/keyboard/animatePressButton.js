@@ -1,4 +1,4 @@
-const animatePressButton = (setLanguage, event) => {
+const animatePressButton = (event) => {
   event.preventDefault();
   const element = document.querySelector(`.${event.code}`);
 
@@ -8,10 +8,6 @@ const animatePressButton = (setLanguage, event) => {
     element.classList.add('wrapper__container__button-pressed');
     element.click();
   } else { element.classList.remove('wrapper__container__button-pressed'); }
-
-  if (event.ctrlKey && event.altKey) {
-    setLanguage();
-  }
 };
 
 export default animatePressButton;
