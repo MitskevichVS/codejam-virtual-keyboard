@@ -1,14 +1,22 @@
-const mouseClick = (setLanguage, setRegister, event) => {
-  const textarea = document.querySelector('.wrapper__input-text');
+import textareaControl from '../textarea/textareaControl';
+import data from '../data';
 
+const mouseClick = (setLanguage, setRegister, event) => {
+  const nonCharKeys = ['Shift', 'Ctrl', 'Alt', 'Win', 'BackSpace', 'CapsLock'];
   if (event.target.classList[0] !== 'wrapper__container__button') return;
 
-  const char = event.target.innerText;
+  let char = event.target.innerText;
 
-  if (char.length > 1) return;
+  if (char === 'Enter' || char === 'Tab ⇄') {
+    const charArrayData = data.find(item => item[5] === char);
+    [, char] = charArrayData;
+  } else if (char === 'BackSpace') {
+    textareaControl('delete', char);
+  }
 
-  textarea.insertAdjacentHTML('beforeend', char);
-  textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+  if (nonCharKeys.includes(char)) return;
+
+  textareaControl('add', char);
 };
 
 export default mouseClick;

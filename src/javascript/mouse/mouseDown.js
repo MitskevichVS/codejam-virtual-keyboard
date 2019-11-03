@@ -3,6 +3,9 @@ const mouseDown = (changeRegister, event) => {
     case ('Shift'):
       changeRegister();
       break;
+    case ('CapsLock'):
+      changeRegister();
+      break;
     default:
       break;
   }
