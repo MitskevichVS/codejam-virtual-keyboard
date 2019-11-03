@@ -1,14 +1,14 @@
 const checkRegisterButtons = (setRegister, event) => {
-  let shiftPressed = false;
-  if (event.shiftKey && event.type === 'keydown') {
+  if (event.shiftKey && event.type === 'keydown' && event.key === 'Shift') {
     if (event.repeat) return;
-    shiftPressed = true;
+
     setRegister();
-  } else if (shiftPressed && event.type === 'keyup') {
-    shiftPressed = false;
+  } else if (event.key === 'Shift' && event.type === 'keyup') {
     setRegister();
   } else if (event.key === 'CapsLock' && event.type === 'keydown') {
     setRegister();
+    const capsLockButton = document.querySelector('.CapsLock');
+    capsLockButton.classList.toggle('wrapper__container__button-pressed');
   }
 };
 
