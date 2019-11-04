@@ -5,9 +5,7 @@ import keyboardListener from './javascript/keyboard/keyboardLitener';
 import mouseClick from './javascript/mouse/mouseEvent';
 import mouseDown from './javascript/mouse/mouseDown';
 import mouseUp from './javascript/mouse/mouseUp';
-import '../dist/css/reset.css';
-import '../dist/css/normalize.css';
-import '../dist/css/style.min.css';
+import './styles/style.scss';
 
 window.onload = () => {
   const body = document.getElementsByTagName('body')[0];

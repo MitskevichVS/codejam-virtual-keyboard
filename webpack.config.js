@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const GhPagesWebpackPlugin = require('gh-pages-webpack-plugin');
+// const GhPagesWebpackPlugin = require('gh-pages-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -20,47 +20,14 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
+        test: /\.s[ac]ss$/i,
         use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(gif|png|jpe?g|svg)$/i,
-        use: [
-          'file-loader',
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 65,
-              },
-              // optipng.enabled: false will disable optipng
-              optipng: {
-                enabled: false,
-              },
-              pngquant: {
-                quality: '65-90',
-                speed: 4,
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              // the webp option will enable WEBP
-              webp: {
-                quality: 75,
-              },
-            },
-          },
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
         ],
       },
       {
@@ -78,7 +45,7 @@ module.exports = {
   plugins: [new HtmlWebpackPlugin({
     title: 'Codejam Virtual Keyboard',
   }),
-  new GhPagesWebpackPlugin({
+  /* new GhPagesWebpackPlugin({
     path: path.resolve(__dirname, 'dist'),
     options: {
       user: {
@@ -86,6 +53,6 @@ module.exports = {
         email: 'mv2.mx@yandex.ru',
       },
     },
-  }),
+  }), */
   ],
 };

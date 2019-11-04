@@ -1,6 +1,8 @@
-// @import "./_fonts.scss";
+@import "./_fonts.scss";
+@import "./normalize.scss";
+@import "./reset.scss";
 
-$main-font: 'Orbitron', sans-serif;
+$main-font: 'Noto Sans', sans-serif;
 
 body {
   width: 100%;
@@ -9,6 +11,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  font-family: $main-font;
 
   .wrapper {
     width: 100%;
@@ -16,15 +19,24 @@ body {
     display: grid;
     grid-template-rows: 10% 30% 60%;
 
+
+    .wrapper__header {
+      margin-top: 2%;
+      font-size: 1.5em;
+      display: flex;
+      justify-content: center;
+    }
+
     .wrapper__input-text {
-      margin: 1% 0%;
+      margin: 1% auto;
+      width: 80%;
       resize: none;
     }
 
     .wrapper__container {
       width: 80%;
       height: 60%;
-      margin: 1% auto;
+      margin: 0% auto;
       background-color: #fff;
       display: grid;
       grid-template-columns: repeat(15, 6.67%);
@@ -40,30 +52,27 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #3A424E;
+        background-color: #fff/* #3A424E */;
         margin: 4px 4px;
         border-radius: 2%;
-        color: #fff;
+        color: #000;
         transition: all 0.1s ease-in-out;
         user-select: none;
+        box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.75);
 
         &:active {
           transform: scale(0.9);
-          background-color: #8f5ae6;
+          background-color: #bababa;
         }
-
-        /* &:hover {
-          transform: scale(0.9);
-        } */
       }
 
       .wrapper__container__button-nonchar {
-        background-color: #232830;
+        background-color: #e8e8e8;
       }
 
       .wrapper__container__button-pressed {
         transform: scale(0.9);
-        background-color: #8f5ae6;
+        background-color: #bababa;
       }
     }
   }
