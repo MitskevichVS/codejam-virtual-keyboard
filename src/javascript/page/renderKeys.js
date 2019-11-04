@@ -1,4 +1,4 @@
-const renderKeys = (keysArray, language, register) => {
+const renderKeys = (keysArray, language, register, capsFlag) => {
   const keyboardContainer = document.querySelector('.wrapper__container');
 
   while (keyboardContainer.firstChild) {
@@ -33,6 +33,10 @@ const renderKeys = (keysArray, language, register) => {
       key.insertAdjacentHTML('afterbegin', `${item[charPosition]}`);
     } else {
       key.classList.add('wrapper__container__button-nonchar');
+
+      if (capsFlag === true && item[charPosition] === 'CapsLock') {
+        key.classList.add('wrapper__container__button-CapsLock');
+      }
       key.insertAdjacentHTML('afterbegin', `${item[5]}`);
     }
 

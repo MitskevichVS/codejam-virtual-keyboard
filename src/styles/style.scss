@@ -52,7 +52,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #fff/* #3A424E */;
+        background-color: #fff;
         margin: 4px 4px;
         border-radius: 2%;
         color: #000;
@@ -70,7 +70,8 @@ body {
         background-color: #e8e8e8;
       }
 
-      .wrapper__container__button-pressed {
+      .wrapper__container__button-pressed,
+      .wrapper__container__button-CapsLock {
         transform: scale(0.9);
         background-color: #bababa;
       }

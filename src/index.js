@@ -11,21 +11,26 @@ window.onload = () => {
   const body = document.getElementsByTagName('body')[0];
   let language = 'En';
   let register = 'sm';
+  let capsFlag = false;
 
-  const changeRegister = () => {
+  const changeRegister = (targetButton) => {
     switch (register) {
       case ('sm'):
         register = 'md';
-        localStorage.register = register;
-        renderKeys(data, language, register);
+        if (targetButton === 'Shift') {
+          capsFlag = false;
+        } else {
+          capsFlag = true;
+        }
+        renderKeys(data, language, register, capsFlag);
         break;
       case ('md'):
         register = 'sm';
-        localStorage.register = register;
-        renderKeys(data, language, register);
+        capsFlag = false;
+        renderKeys(data, language, register, capsFlag);
         break;
       default:
-        renderKeys(data, language, register);
+        renderKeys(data, language, register, capsFlag);
         break;
     }
   };
@@ -35,15 +40,15 @@ window.onload = () => {
       case ('En'):
         language = 'Ru';
         localStorage.lang = language;
-        renderKeys(data, language, register);
+        renderKeys(data, language, register, capsFlag);
         break;
       case ('Ru'):
         language = 'En';
         localStorage.lang = language;
-        renderKeys(data, language, register);
+        renderKeys(data, language, register, capsFlag);
         break;
       default:
-        renderKeys(data, language, register);
+        renderKeys(data, language, register, capsFlag);
         break;
     }
   };
@@ -53,7 +58,7 @@ window.onload = () => {
   }
 
 
-  renderPage(body, data, language, register);
+  renderPage(body, data, language, register, capsFlag);
 
   const textarea = document.querySelector('.wrapper__input-text');
 

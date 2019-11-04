@@ -1,6 +1,6 @@
 import renderKeys from './renderKeys';
 
-const renderPage = (body, keysData, language, register) => {
+const renderPage = (body, keysData, language, register, capsFlag) => {
   const container = document.createElement('div');
   container.classList.add('wrapper');
   body.appendChild(container);
@@ -18,7 +18,7 @@ const renderPage = (body, keysData, language, register) => {
   keyboardContainer.className = 'wrapper__container';
   container.appendChild(keyboardContainer);
 
-  renderKeys(keysData, language, register);
+  renderKeys(keysData, language, register, capsFlag);
 };
 
 export default renderPage;
